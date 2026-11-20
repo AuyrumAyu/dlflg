@@ -1,0 +1,179 @@
+{
+	id: "7A3E0F2B1C000001"
+	group: ""
+	order_index: 0
+	filename: "aetherium_overlord"
+	title: "Aetherium Overlord"
+	icon: "aetherium_overlord:mana_crystal"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Пробуждение маны"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"Ты чувствуешь тепло в ладонях..."
+				"Найди самоцвет маны, чтобы пробудить дремлющую силу."
+			]
+			id: "7A3E0F2B1C000101"
+			tasks: [{
+				id: "7A3E0F2B1C000201"
+				type: "item"
+				item: "aetherium_overlord:mana_crystal"
+			}]
+			rewards: [
+				{
+					id: "7A3E0F2B1C000301"
+					type: "item"
+					item: "aetherium_overlord:path_tome"
+				}
+				{
+					id: "7A3E0F2B1C000302"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			title: "Выбор Пути"
+			x: 2.0d
+			y: 0.0d
+			description: ["Стихия зовёт тебя. Используй Фолиант Выбора Пути."]
+			dependencies: ["7A3E0F2B1C000101"]
+			id: "7A3E0F2B1C000102"
+			tasks: [{
+				id: "7A3E0F2B1C000202"
+				type: "checkmark"
+				title: "Я выбрал свой Путь"
+			}]
+			rewards: [{
+				id: "7A3E0F2B1C000303"
+				type: "item"
+				item: {
+					id: "aetherium_overlord:path_shard"
+					Count: 2
+				}
+			}]
+		}
+		{
+			title: "Эфирная руда"
+			x: 4.0d
+			y: 0.0d
+			description: ["Жила эфира лежит глубоко под камнем. Добудь 8 единиц."]
+			dependencies: ["7A3E0F2B1C000102"]
+			id: "7A3E0F2B1C000103"
+			tasks: [{
+				id: "7A3E0F2B1C000203"
+				type: "item"
+				item: {
+					id: "aetherium_overlord:raw_ether"
+					Count: 8
+				}
+			}]
+			rewards: [{
+				id: "7A3E0F2B1C000304"
+				type: "item"
+				item: "aetherium_overlord:apprentice_staff"
+			}]
+		}
+		{
+			title: "Первый посох"
+			x: 6.0d
+			y: 0.0d
+			description: ["Посох — продолжение воли мага."]
+			dependencies: ["7A3E0F2B1C000103"]
+			id: "7A3E0F2B1C000104"
+			tasks: [{
+				id: "7A3E0F2B1C000204"
+				type: "item"
+				item: "aetherium_overlord:ember_staff"
+			}]
+			rewards: [{
+				id: "7A3E0F2B1C000305"
+				type: "item"
+				item: {
+					id: "aetherium_overlord:path_shard"
+					Count: 1
+				}
+			}]
+		}
+		{
+			title: "Стол начертания"
+			x: 8.0d
+			y: 0.0d
+			description: ["Знаки хранят силу. Создай Стол начертания рун."]
+			dependencies: ["7A3E0F2B1C000104"]
+			id: "7A3E0F2B1C000105"
+			tasks: [{
+				id: "7A3E0F2B1C000205"
+				type: "item"
+				item: "aetherium_overlord:rune_inscription_table"
+			}]
+			rewards: [{
+				id: "7A3E0F2B1C000306"
+				type: "item"
+				item: {
+					id: "aetherium_overlord:blank_rune"
+					Count: 16
+				}
+			}]
+		}
+		{
+			title: "Алтарь слияния"
+			x: 10.0d
+			y: 0.0d
+			description: ["Алтарь сливает несоединимое."]
+			dependencies: ["7A3E0F2B1C000105"]
+			id: "7A3E0F2B1C000106"
+			tasks: [{
+				id: "7A3E0F2B1C000206"
+				type: "item"
+				item: "aetherium_overlord:fusion_altar"
+			}]
+			rewards: [{
+				id: "7A3E0F2B1C000307"
+				type: "item"
+				item: {
+					id: "aetherium_overlord:ether_ingot"
+					Count: 4
+				}
+			}]
+		}
+		{
+			title: "Убийство Древнего Бога Эфира"
+			subtitle: "Финал"
+			x: 12.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
+			description: [
+				"Эфир замолкает. Теперь он — твой."
+				"Победи Эфириона на Арене Бога."
+			]
+			dependencies: ["7A3E0F2B1C000106"]
+			id: "7A3E0F2B1C000125"
+			tasks: [{
+				id: "7A3E0F2B1C000225"
+				type: "kill"
+				entity: "minecraft:wither"
+				value: 1L
+			}]
+			rewards: [
+				{
+					id: "7A3E0F2B1C000325"
+					type: "xp"
+					xp: 1000
+				}
+				{
+					id: "7A3E0F2B1C000326"
+					type: "item"
+					item: {
+						id: "aetherium_overlord:path_shard"
+						Count: 10
+					}
+				}
+			]
+		}
+	]
+}
